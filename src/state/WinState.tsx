@@ -8,6 +8,7 @@ class WinState extends State {
   formatScore = () => {
     const players: Player[] = this.gameState.getPlayers();
     let displayScore = "";
+  
     if (players[0].score > players[1].score) displayScore = players[0].name;
     else displayScore = players[1].name;
     displayScore += " WINS !";
