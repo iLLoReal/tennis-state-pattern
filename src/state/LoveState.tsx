@@ -9,7 +9,7 @@ class LoveState extends State {
     const players: Player[] = this.gameState.getPlayers();
 
     console.log("About to create RegularState");
-    if (players[0].score >= 3 || players[1].score >= 3)
+    if (players[0].score > 3 || players[1].score > 3)
       this.gameState.changeState(new AdvancedState(this.gameState));
     else this.gameState.changeState(new RegularState(this.gameState));
   };

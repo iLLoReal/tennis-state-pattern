@@ -21,15 +21,15 @@ class AdvancedState extends State {
 
     if (players[1].score > players[0].score) {
       this.gameState.setScoreDisplay(
-        `${players[0].name} ${scoreTables[players[0].score]} -  ${
+        `${players[0].name} ${scoreTables[3]} -  ${
           players[1].name
-        } ${scoreTables[players[1].score]} Advantage`
+        } ${scoreTables[3]} Advantage`
       );
     } else {
       this.gameState.setScoreDisplay(
-        `${players[0].name} ${scoreTables[players[0].score]} Advantage -  ${
+        `${players[0].name} ${scoreTables[3]} Advantage -  ${
           players[1].name
-        } ${scoreTables[players[1].score]}`
+        } ${scoreTables[3]}`
       );
     }
   };

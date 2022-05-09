@@ -24,6 +24,12 @@ const App = () => {
       <Game nameP1={nameP1} nameP2={nameP2} wins={wins}/>
       <button onClick={handleAddP1Click}>add p1 win exchange</button>
       <button onClick={handleAddP2Click}>add p2 win exchange</button>
+      <form>
+        <label>set P1 name</label>
+        <input onChange={(e) => setNameP1(e.target.value)}/>
+        <label>set P2 name</label>
+        <input onChange={(e) => setNameP2(e.target.value)}/>
+      </form>
     </div>
   );
 }
