@@ -13,7 +13,7 @@ const Game = ({nameP1, nameP2, wins}: GameProps) => {
   );
 
   wins.forEach((win) => {
-    gameState.incrementScore(win === "P1" ? 0 : 1);
+    gameState.incrementScore(win === nameP1 ? 0 : 1);
   });
   gameState.formatScore();
 
