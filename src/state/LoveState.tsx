@@ -1,7 +1,8 @@
 import State from "./State";
-import { Player } from "../context/GameContext";
 import RegularState from "./RegularState";
 import AdvancedState from "./AdvancedState";
+
+import { Player } from "../context/GameContext";
 import { oneScoreIsOverForty } from "../context/Utils";
 
 class LoveState extends State {
