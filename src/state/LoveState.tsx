@@ -2,13 +2,14 @@ import State from "./State";
 import { Player } from "../context/GameContext";
 import RegularState from "./RegularState";
 import AdvancedState from "./AdvancedState";
+import { oneScoreIsOverForty } from "../context/Utils";
 
 class LoveState extends State {
   incrementScore = (playerIndex: number) => {
     this.gameState.increasePlayerScore(playerIndex);
     const players: Player[] = this.gameState.getPlayers();
 
-    if (players[0].score > 3 || players[1].score > 3)
+    if (oneScoreIsOverForty(players)) 
       this.gameState.changeState(new AdvancedState(this.gameState));
     else this.gameState.changeState(new RegularState(this.gameState));
   };

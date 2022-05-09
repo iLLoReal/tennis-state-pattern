@@ -1,16 +1,18 @@
 import State from "./State";
-import { Player } from "../context/GameContext";
 import LoveState from "./LoveState";
 import WinState from "./WinState";
+
+import { Player } from "../context/GameContext";
+import { scoresAreEqual, oneScoreIsOverForty } from "../context/Utils";
 
 class RegularState extends State {
   incrementScore = (playerIndex: number) => {
     this.gameState.increasePlayerScore(playerIndex);
     const players: Player[] = this.gameState.getPlayers();
 
-    if (players[0].score === players[1].score) {
+    if (scoresAreEqual(players)) {
       this.gameState.changeState(new LoveState(this.gameState));
-    } else if (players[0].score > 3 || players[1].score > 3) {
+    } else if (oneScoreIsOverForty(players)) {
       this.gameState.changeState(new WinState(this.gameState));
     }
   };
@@ -27,3 +29,6 @@ class RegularState extends State {
 }
 
 export default RegularState;
+
+
+

@@ -2,9 +2,7 @@ import State from "./State";
 import { Player } from "../context/GameContext";
 
 class WinState extends State {
-  incrementScore = () => {
-    return;
-  };
+  incrementScore = () => {};
   formatScore = () => {
     const players: Player[] = this.gameState.getPlayers();
     let displayScore = "";

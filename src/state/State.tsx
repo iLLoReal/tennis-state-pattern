@@ -7,7 +7,7 @@ abstract class State {
     this.gameState = gameState;
   }
 
-  abstract formatScore(): void;
   abstract incrementScore(playerIndex: number): void;
+  abstract formatScore(): void;
 }
 export default State;
