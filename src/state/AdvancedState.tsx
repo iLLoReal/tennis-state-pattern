@@ -8,7 +8,6 @@ class AdvancedState extends State {
     this.gameState.increasePlayerScore(playerIndex);
     const players: Player[] = this.gameState.getPlayers();
 
-    console.log("Advanced");
     if (players[0].score === players[1].score) {
       this.gameState.changeState(new DeuceState(this.gameState));
     } else {
